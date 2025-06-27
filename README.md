@@ -7,13 +7,13 @@
 ├── build
 │   └── debug
 ├── include
-│   ├── SDL2 -> /opt/homebrew/Cellar/sdl2/2.30.0/include/SDL2
-│   ├── SDL2_image -> /opt/homebrew/Cellar/sdl2_image/2.8.2/include/SDL2
-│   └── SDL2_ttf -> /opt/homebrew/Cellar/sdl2_ttf/2.22.0/include
+│   ├── SDL2 -> /opt/homebrew/Cellar/sdl2/2.32.8/include/SDL2
+│   ├── SDL2_image -> /opt/homebrew/Cellar/sdl2_image/2.8.8/include/SDL2
+│   └── SDL2_ttf -> /opt/homebrew/Cellar/sdl2_ttf/2.24.0/include
 ├── lib
-│   ├── SDL2 -> /opt/homebrew/Cellar/sdl2/2.30.0/lib
-│   ├── SDL2_image -> /opt/homebrew/Cellar/sdl2_image/2.8.2/lib
-│   └── SDL2_ttf -> /opt/homebrew/Cellar/sdl2_ttf/2.22.0/lib
+│   ├── SDL2 -> /opt/homebrew/Cellar/sdl2/2.32.8/lib
+│   ├── SDL2_image -> /opt/homebrew/Cellar/sdl2_image/2.8.8/lib
+│   └── SDL2_ttf -> /opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib
 └── src
     └── main.cpp
 ```
@@ -22,9 +22,7 @@
 1. Install brew:\
     `"/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
    
-2. `brew install sdl2`\
-   `brew install sdl2_image`\
-   `brew install sdl2_ttf`
+2. `brew install sdl2 sdl2_image sdl2_ttf`
 
 3. Open the project file terminal
 
@@ -38,48 +36,47 @@
 6. My location of files:
     ## SDL2
     ```
-    /opt/homebrew/Cellar/sdl2/2.30.0/bin/sdl2-config
-    /opt/homebrew/Cellar/sdl2/2.30.0/include/SDL2/ (78 files)
-    /opt/homebrew/Cellar/sdl2/2.30.0/lib/libSDL2-2.0.0.dylib
-    /opt/homebrew/Cellar/sdl2/2.30.0/lib/cmake/ (2 files)
-    /opt/homebrew/Cellar/sdl2/2.30.0/lib/pkgconfig/sdl2.pc
-    /opt/homebrew/Cellar/sdl2/2.30.0/lib/ (4 other files)
-    /opt/homebrew/Cellar/sdl2/2.30.0/share/aclocal/sdl2.m4
+    /opt/homebrew/Cellar/sdl2/2.32.8/bin/sdl2-config
+    /opt/homebrew/Cellar/sdl2/2.32.8/include/SDL2/ (78 files)
+    /opt/homebrew/Cellar/sdl2/2.32.8/lib/libSDL2-2.0.0.dylib
+    /opt/homebrew/Cellar/sdl2/2.32.8/lib/cmake/ (2 files)
+    /opt/homebrew/Cellar/sdl2/2.32.8/lib/pkgconfig/sdl2.pc
+    /opt/homebrew/Cellar/sdl2/2.32.8/lib/ (4 other files)
+    /opt/homebrew/Cellar/sdl2/2.32.8/share/aclocal/sdl2.m4
     ```
     ## SDL2_image
     ```
-    /opt/homebrew/Cellar/sdl2_image/2.8.2/include/SDL2/SDL_image.h
-    /opt/homebrew/Cellar/sdl2_image/2.8.2/lib/libSDL2_image-2.0.0.dylib
-    /opt/homebrew/Cellar/sdl2_image/2.8.2/lib/cmake/ (2 files)
-    /opt/homebrew/Cellar/sdl2_image/2.8.2/lib/pkgconfig/SDL2_image.pc
-    /opt/homebrew/Cellar/sdl2_image/2.8.2/lib/ (2 other files)
+    /opt/homebrew/Cellar/sdl2_image/2.8.8/include/SDL2/SDL_image.h
+    /opt/homebrew/Cellar/sdl2_image/2.8.8/lib/libSDL2_image-2.0.0.dylib
+    /opt/homebrew/Cellar/sdl2_image/2.8.8/lib/cmake/ (2 files)
+    /opt/homebrew/Cellar/sdl2_image/2.8.8/lib/pkgconfig/SDL2_image.pc
+    /opt/homebrew/Cellar/sdl2_image/2.8.8/lib/ (2 other files)
     ```
     ## SDL2_ttf
     ```
-    /opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2/SDL_ttf.h
-    /opt/homebrew/Cellar/sdl2_ttf/2.22.0/lib/libSDL2_ttf-2.0.0.dylib
-    /opt/homebrew/Cellar/sdl2_ttf/2.22.0/lib/cmake/ (2 files)
-    /opt/homebrew/Cellar/sdl2_ttf/2.22.0/lib/pkgconfig/SDL2_ttf.pc
-    /opt/homebrew/Cellar/sdl2_ttf/2.22.0/lib/ (2 other files)
+    /opt/homebrew/Cellar/sdl2_ttf/2.24.0/include/SDL2/SDL_ttf.h
+    /opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib/libSDL2_ttf-2.0.0.dylib
+    /opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib/cmake/ (2 files)
+    /opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib/pkgconfig/SDL2_ttf.pc
+    /opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib/ (2 other files)
     ```
 
 7. Linking sdl2 files:
    ## SDL2
-   into include: `ln -s /opt/homebrew/Cellar/sdl2/2.30.0/include/SDL2 ./include/SDL2`\
-   into lib: `ln -s /opt/homebrew/Cellar/sdl2/2.30.0/lib ./lib/SDL2`
+   into include: `ln -s /opt/homebrew/Cellar/sdl2/2.32.8/include/SDL2 ./include/SDL2`\
+   into lib: `ln -s /opt/homebrew/Cellar/sdl2/2.32.8/lib ./lib/SDL2`
    ## SDL2_image
-    into include: `ln -s /opt/homebrew/Cellar/sdl2_image/2.8.2/include/SDL2 ./include/SDL2_image`\
-    into lib: `ln -s /opt/homebrew/Cellar/sdl2_image/2.8.2/lib ./lib/SDL2_image`
+    into include: `ln -s /opt/homebrew/Cellar/sdl2_image/2.8.8/include/SDL2 ./include/SDL2_image`\
+    into lib: `ln -s /opt/homebrew/Cellar/sdl2_image/2.8.8/lib ./lib/SDL2_image`
    ## SDL2_ttf
-    into include: `ln -s /opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2 ./include/SDL2_ttf`\
-    into lib: `ln -s /opt/homebrew/Cellar/sdl2_ttf/2.22.0/lib ./lib/SDL2_ttf`
+    into include: `ln -s /opt/homebrew/Cellar/sdl2_ttf/2.24.0/include/SDL2 ./include/SDL2_ttf`\
+    into lib: `ln -s /opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib ./lib/SDL2_ttf`
 
 8.  Create main.pp and Makefile: 
     ```
-    touch src/main.cpp
-    touch Makefile
+    touch src/main.cpp Makefile
     ```
-9.  Code for Makefile
+9.  Copy & paste this code into your Makefile
     ```Makefile
     SRC_DIR = src
     BUILD_DIR = build/debug
@@ -95,7 +92,7 @@
         $(CC) $(COMPILER_FLAGS) $(LINKER_FLAGS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(SRC_FILES) -o $(BUILD_DIR)/$(OBJ_NAME)
     ```
 
-1.  Code for main.cpp
+10.  Copy & paste this code into your main.cpp
     ````cpp
     #include <SDL.h>
     #include <iostream>
@@ -140,7 +137,7 @@
                     quit = true;
                 }
             }
-            // Set render color to blue
+            // Set render color to white
             SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
             // Clear the window with the render color
@@ -157,8 +154,7 @@
 
         return 0;
     }
-2.  Test:\
-    `make`\
-    `.\build\debug\play`
+11.  Test:\
+    `make && ./build/debug/play`
 
-# If you have white window on your screen everything is set.
+### If you have white window on your screen everything is set.
