@@ -1,9 +1,8 @@
 # SDL2 for MACOS
-#### It's can be also for C (with small changes)
 
 ### Stracture of Project
 ```tree
-├── Makefile
+├── Justfile
 ├── build
 │   └── debug
 ├── include
@@ -15,7 +14,7 @@
 │   ├── SDL2_image -> /opt/homebrew/Cellar/sdl2_image/2.8.8/lib
 │   └── SDL2_ttf -> /opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib
 └── src
-    └── main.cpp
+    └── main.c
 ```
 # Steps
 
@@ -158,3 +157,68 @@
     `make && ./build/debug/play`
 
 ### If you have white window on your screen everything is set.
+
+## Bear setup for Editor completions 
+
+# bear
+
+Great — using [`bear`](https://github.com/rizsotto/Bear) is the cleanest way to generate a proper `compile_commands.json`. Here's how you can do it for your SDL project.
+
+---
+
+## ✅ Step-by-Step Instructions
+
+### 1. **Install Bear**
+
+If you haven't installed it yet:
+
+```bash
+brew install bear
+```
+
+---
+
+### 2. **Update Your `Justfile` to Include a Build Command**
+
+Assuming you have a `Justfile` rule like:
+
+```make
+default:
+    clang src/main.c -Iinclude -Iinclude/SDL2 -Llib/SDL2 -lSDL2 -lSDL2_image -lSDL2_ttf -std=c11 -o build/debug/play
+```
+
+You can wrap this build command with `bear` to record it.
+
+---
+
+### 3. **Generate `compile_commands.json`**
+
+From the **project root**, run:
+
+```bash
+bear -- just
+```
+
+This will:
+
+* Intercept the compiler command inside your `Justfile`.
+* Generate a `compile_commands.json` in the root directory.
+
+✅ Once this is done, `clangd` (and Zed) will pick it up automatically.
+
+---
+
+### 🔁 Optional: Confirm It Worked
+
+Check that the generated file exists:
+
+```bash
+cat compile_commands.json
+```
+
+You should see a JSON array with your compile command.
+
+---
+
+Let me know if your `Justfile` has a different structure or you want to support multiple `.c` files — I can help you adapt it.
+
